@@ -1,0 +1,48 @@
+<!--
+- Author:  LiShibin.
+- Date:    2016/12/7.
+- File:    test.
+-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Title </title>
+    <!-- styles -->
+    <link rel="stylesheet" href="../assets/less/common.less">
+    <!-- script -->
+</head>
+
+<body>
+<link rel="import" href="../template/header.html?__inline">
+
+<div>
+
+</div>
+
+<link rel="import" href="../template/footer.html?__inline">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+    var headers={
+        "Content-Type": "application/octet-stream",
+        "wohome-head-params": "F05D17AF3AE84192A93D478B21BFB5D0;0D39DEF99B09484AB0A5127B87B3821F;8FAF79BF4646C66E255FC108B2913FD8;F;wohome.community.house.self.list.get;"
+    }
+    $(document).ready(function () {
+        $.ajax('/api_outer/',{
+            headers:headers,
+            type:'post',
+            data:encodeURIComponent(JSON.stringify({})),
+            success:function (response) {
+                console.log(response);
+            },
+            error:function (e) {
+                console.log(e);
+            }
+        })
+    })
+</script>
+</body>
+</html>

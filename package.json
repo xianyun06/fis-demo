@@ -1,0 +1,19 @@
+{
+  "name": "fis-demo",
+  "version": "1.0.0",
+  "description": "fis-demo",
+  "author": "xianyun06 <382473285@qq.com>",
+  "private": true,
+  "scripts": {
+    "start server": "node dev-server.js",
+    "dev": "fis3 release -d ./dev -wL",
+    "build": "fis3 release prod",
+    "upload": "fis3 release upload"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "express": "^4.13.3",
+    "http-proxy-middleware": "^0.12.0"
+  }
+}
