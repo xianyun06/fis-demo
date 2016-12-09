@@ -6,33 +6,33 @@ module.exports = {
     port: 8080,
     browse: false,
     proxy: {
-        '/api_oauth/**': {
+        '/api_oauth': {
             target: 'http://192.168.254.1:7100',
             changeOrigin: false,
             logLevel: 'debug',
             pathRewrite: {
-                '^/api_oauth/': ''
+                '^/api_oauth(.*)': ''
             }
         },
-        '/api_inner/**': {
+        '/api_inner': {
             target: 'http://192.168.254.1:7200',
             changeOrigin: false,
             pathRewrite: {
-                '^/api_inner/': ''
+                '^/api_inner(.*)': ''
             },
         },
-        '/api_outer/**': {
+        '/api_outer': {
             target: 'http://192.168.254.1:7300',
             changeOrigin: false,
             pathRewrite: {
-                '^/api_outer/': ''
+                '^/api_outer(.*)': ''
             },
         },
-        '/api_outer_oauth/**': {
+        '/api_outer_oauth': {
             target: 'http://192.168.254.1:7000',
             changeOrigin: false,
             pathRewrite: {
-                '^/api_outer_oauth/': ''
+                '^/api_outer_oauth(.*)': ''
             },
         }
     }
